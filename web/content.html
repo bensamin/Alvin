@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>jsonp</title>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	
+</head>
+<body>
+<script>
+		$(function(){
+			$.ajax({
+				type:"get",
+				url:"http://139.224.133.119:8080/CarStar/rest/car/query1",
+				
+				dataType:"jsonp",
+				jsonp:"callback",
+				jsonpCallback:"?",
+				success:function(json){
+					alert("message:"+json.data);
+				},
+				error:function(){
+					alert("fail");
+				}
+			});
+		});
+	</script>
+	
+
+</body>
+</html>
